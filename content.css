@@ -1,0 +1,236 @@
+/* Button styling */
+#ai-assistant-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: 10px;
+    padding: 5px;
+    border-radius: 50%;
+    background-color: #4285f4;
+    border: none;
+    cursor: pointer;
+    width: 36px;
+    height: 36px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    transition: all 0.3s ease;
+}
+#ai-assistant-button:hover {
+    background-color: #3b78e7;
+    transform: scale(1.05);
+}
+#ai-assistant-button img {
+    width: 20px;
+    height: 20px;
+}
+
+/* Chat panel styling */
+#ai-chat-panel {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 500px; /* Increased from 350px */
+    height: 650px; /* Increased from 500px */
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+    display: flex;
+    flex-direction: column;
+    z-index: 10000;
+    overflow: hidden;
+    transition: height 0.3s ease;
+}
+
+/* Minimized state */
+#ai-chat-panel.minimized {
+    height: 50px;
+    overflow: hidden;
+}
+
+.ai-chat-header {
+    padding: 10px 15px;
+    background-color: #4285f4;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: move; /* Indicates the header can be used for dragging */
+}
+
+.ai-chat-header h3 {
+    margin: 0;
+    font-size: 16px;
+}
+
+.ai-header-controls {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+#ai-chat-minimize,
+#ai-chat-clear,
+#ai-chat-close,
+#ai-chat-export {
+    background: none;
+    border: none;
+    color: white;
+    cursor: pointer;
+    padding: 0;
+    width: 16px;
+    height: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#ai-chat-minimize img,
+#ai-chat-clear img,
+#ai-chat-close img,
+#ai-chat-export img {
+    width: 16px;
+    height: 16px;
+    filter: brightness(0) invert(1);
+}
+
+.ai-chat-messages {
+    flex: 1;
+    padding: 15px;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 12px; /* Slightly increased gap */
+}
+
+.ai-message, .user-message {
+    padding: 10px 12px;
+    border-radius: 10px;
+    max-width: 85%; /* Increased from 80% */
+    word-wrap: break-word;
+    position: relative;
+}
+
+.ai-message {
+    background-color: #f1f3f4;
+    align-self: flex-start;
+}
+
+.user-message {
+    background-color: #e3f2fd;
+    align-self: flex-end;
+}
+
+.ai-message.error {
+    background-color: #ffebee;
+    color: #c62828;
+}
+
+.ai-message.typing {
+    background-color: #f1f3f4;
+    color: #666;
+    align-self: flex-start;
+}
+
+/* Add copy button to AI messages */
+.ai-message:not(.typing):not(.error):hover .message-copy-btn {
+    opacity: 1;
+}
+
+.message-copy-btn {
+    position: absolute;
+    right: 5px;
+    top: 5px;
+    padding: 3px 8px;
+    font-size: 12px;
+    background: #4285f4;
+    color: white;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+    opacity: 0;
+    transition: opacity 0.2s;
+}
+
+/* Copy status notification */
+.copy-status {
+    padding: 5px 10px;
+    background-color: #4CAF50;
+    color: white;
+    border-radius: 4px;
+    font-size: 12px;
+}
+
+.ai-chat-input {
+    padding: 12px; /* Slightly increased padding */
+    display: flex;
+    gap: 8px;
+    border-top: 1px solid #ddd;
+}
+
+#ai-chat-input-text {
+    flex: 1;
+    padding: 8px 12px;
+    border: 1px solid #ddd;
+    border-radius: 20px;
+    resize: none;
+    height: 50px; /* Increased from 40px */
+    font-family: inherit;
+}
+
+#ai-chat-send {
+    background-color: #4285f4;
+    color: white;
+    border: none;
+    border-radius: 20px;
+    padding: 0 15px;
+    cursor: pointer;
+    font-weight: 500;
+}
+
+#ai-chat-send:hover {
+    background-color: #3b78e7;
+}
+
+/* Code styling */
+pre {
+    background-color: #f5f5f5;
+    padding: 8px;
+    border-radius: 4px;
+    overflow-x: auto;
+    margin: 8px 0;
+    position: relative;
+}
+
+code {
+    font-family: monospace;
+    background-color: #f5f5f5;
+    padding: 2px 4px;
+    border-radius: 3px;
+    font-size: 0.9em;
+}
+
+pre code {
+    padding: 0;
+    background-color: transparent;
+}
+
+
+
+/* Code copy button */
+.code-copy-btn {
+    position: absolute;
+    right: 5px;
+    top: 5px;
+    padding: 3px 8px;
+    font-size: 12px;
+    background: #4285f4;
+    color: white;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+    opacity: 0.8;
+    transition: opacity 0.2s;
+}
+
+.code-copy-btn:hover {
+    opacity: 1;
+}
